@@ -29,25 +29,30 @@ export default function Header({ onSearch }: HeaderProps) {
           <a href="#" className={styles.navLink}>New & Popular</a>
         </nav>
 
-        <div className={styles.searchContainer}>
-          {searchActive && (
-            <input
-              type="text"
-              placeholder="Search movies..."
-              className={styles.searchInput}
-              value={searchQuery}
-              onChange={handleSearchChange}
-              autoFocus
-            />
-          )}
-          <button
-            className={styles.searchBtn}
-            onClick={() => {
-              if (!searchActive) setSearchActive(true)
-              else setSearchActive(false)
-            }}
-          >
-            🔍
+        <div className={styles.rightSection}>
+          <div className={styles.searchContainer}>
+            {searchActive && (
+              <input
+                type="text"
+                placeholder="Search movies..."
+                className={styles.searchInput}
+                value={searchQuery}
+                onChange={handleSearchChange}
+                autoFocus
+              />
+            )}
+            <button
+              className={styles.searchBtn}
+              onClick={() => {
+                if (!searchActive) setSearchActive(true)
+                else setSearchActive(false)
+              }}
+            >
+              🔍
+            </button>
+          </div>
+          <button className={styles.loginBtn}>
+            Sign In
           </button>
         </div>
       </div>
